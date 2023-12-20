@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="col-sm-12">
+        <form [formGroup]="perfileForm" (ngSubmit)="guardar()">
+
+            <fieldset class="form-group">
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">NOMBRE: </label>
+                    <input type="text" class="form-control" formControlName="nombre" name="nombre" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">APELLIDOS: </label>
+                    <input type="text" class="form-control" formControlName="apellidos" name="apellidos" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">DNI: </label>
+                    <input type="text" class="form-control" formControlName="dni" name="dni" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">DIRECCION: </label>
+                    <input type="text" class="form-control" formControlName="direccion" name="direccion" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">TELEFONO: </label>
+                    <input type="text" class="form-control" formControlName="telefono" name="telefono" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">EMAIL: </label>
+                    <input type="text" class="form-control" formControlName="email" name="email" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="nombreCompleto">FECHA NACIMIENTO: </label>
+                    <input type="text" class="form-control" formControlName="fechaNacimiento" name="fechaNacimiento" required="">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-group" style="margin-top: 5%;">
+            
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="!perfileForm.valid">GUARDAR</button>
+                    <button type="button" class="btn btn-primary" (click)="volver()" style="margin-left: 5%;">VOLVER</button>
+                </div>
+            
+            </fieldset>
+        </form>
+    </div>
+</div>

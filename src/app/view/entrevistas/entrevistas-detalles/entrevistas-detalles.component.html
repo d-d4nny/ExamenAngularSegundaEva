@@ -1,0 +1,36 @@
+<div class="container">
+    
+    <form [formGroup] = "perfileForm" (ngSubmit)="entrevistaSave()">
+            <h1>ENTREVISTAR CANDIDATOS</h1>
+
+            <br>
+
+        <div>
+            <p>SELECIONE EL CANDIDATO: </p>
+
+            <select formControlName="candidatoSelect" class="form-control" name="candidatoSelect" required="">
+                <option value="" disabled selected hidden>SELECCIONE UN CANDIDATO...</option>
+                <option *ngFor="let candidato of candidatos" [value]="candidato.id">{{candidato.dni}}</option>
+            </select>
+
+        </div>
+
+        <div>
+            <p>SELECIONE EL PUESTO: </p>
+        
+            <select formControlName="puestosDisponiblesSelect" class="form-control" name="puestosDisponiblesSelect" required="">
+                <option value="" disabled selected hidden>SELECCIONE UN PUESTO...</option>
+                <option *ngFor="let puesto of puestosDisponibles" [value]="puesto.id">{{puesto.puesto}}</option>
+            </select>
+
+        </div>
+
+        <br>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="!perfileForm.valid">NUEVA ENTREVISTA</button>
+        <button type="button" class="btn btn-primary" (click)="volver()" style="margin-left: 5%;">VOLVER</button>
+    </form>
+    
+
+    <br>
+</div>

@@ -1,0 +1,73 @@
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-12'>
+            
+            <form class='form-inline'>
+                <fieldset class='form-group col-md-1'>
+                    <a class= 'btn btn-primary' routerLink="candidatos/new">+</a>
+                </fieldset>
+            </form>
+            <br>
+            <table class='table table-striped'>
+                <thead>                
+                    <tr>
+                        <th class='col-md-2'>IDENTIFICADOR</th>
+                        <th class='col-md-2'>NOMBRE</th>
+                        <th class='col-md-2'>APELLIDOS</th>
+                        <th class='col-md-2'>DNI</th>
+                        <th class='col-md-2'>DIRECCION</th>
+                        <th class='col-md-2'>TELEFONO</th>
+                        <th class='col-md-2'>EMAIL</th>
+                        <th class='col-md-2'>FECHA NACIMIENTO</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="candidatos">
+                    <tr *ngFor='let candidato of candidatos; let i=index'>  
+                        <td class='col-md-2'>
+                            {{i+1}}
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.nombre}}</i>
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.apellidos}}</i>
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.dni}}</i>
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.direccion}}</i>
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.telefono}}</i>
+                        </td>
+                        
+                        <td class='col-md-2'>
+                            <i>{{candidato.email}}</i>
+                        </td>
+
+                        <td class='col-md-2'>
+                            <i>{{candidato.fechaNacimiento}}</i>
+                        </td>
+
+                        <td class=”col-md-1”>
+                            <i class="bi bi-pencil-square" routerLink="candidatos/{{candidato.id}}/edit"></i>
+                        </td>
+
+
+                        <td class=”col-md-1”>
+                            <i class="bi bi-trash ps-3 text-danger" (click)="borrar(candidato.id)"></i>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

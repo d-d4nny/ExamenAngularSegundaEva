@@ -1,0 +1,61 @@
+<!--Aqui establecemos la lista donde mostraremos los datos de los juguetes, ademas de un boton para añadir un nuevo
+juguete, otro para editarlo y otro para borrarlo-->
+<div class='container'>
+    <div class='row'>
+        <div class='col-sm-12'>
+            
+            <form class='form-inline'>
+                <fieldset class='form-group col-sm-11'></fieldset>
+                
+                <fieldset class='form-group col-sm-1'>
+                    <a class= 'btn btn-primary' routerLink="puestos-disponibles/new">+</a>
+                </fieldset>
+            </form>
+            <br>
+            <table class='table table-striped'>
+                <thead>                
+                    <tr>
+                        <th class='col-md-1'>IDENTIFICADOR</th>
+                        <th class='col-md-4'>PUESTO</th>
+                        <th class='col-md-4'>EMPRESA</th>
+                        <th class='col-md-4'>DISPONIBILIDAD</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="puestosDisponibles">
+                    <tr *ngFor='let puestosDisponible of puestosDisponibles; let i=index'>
+                        <td class='col-sm-1'>
+                            <i>{{i+1}}</i>
+                        </td>
+                        
+                        <td class='col-md-4'>
+                            <i>{{puestosDisponible.puesto}}</i>
+                        </td>
+
+                        <td class='col-md-4'>
+                            <i>{{puestosDisponible.empresa}}</i>
+                        </td>
+
+                        <td class='col-md-4'>
+                            <i>{{puestosDisponible.disponible}}</i>
+                        </td>
+
+                        <td class=”col-sm-1”>
+                            
+                        </td>
+
+                        <td class=”col-md-1”>
+                            <i class="bi bi-pencil-square text-success" routerLink="puestos-disponibles/{{puestosDisponible.id}}/edit"></i>
+                        </td>
+
+
+                        <td class=”col-md-1”>
+                            <i class="bi bi-trash ps-3 text-danger" (click)="borrar(puestosDisponible.id)"></i>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

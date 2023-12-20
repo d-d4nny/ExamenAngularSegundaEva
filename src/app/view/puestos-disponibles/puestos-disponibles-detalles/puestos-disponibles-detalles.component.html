@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="col-sm-12">
+        <form [formGroup]="perfileForm" (ngSubmit)="guardar()">
+
+            <fieldset class="form-group">
+                <div class="col-sm-12">
+                    <label class="control-label" for="puestoCompleto">PUESTO: </label>
+                    <input type="text" class="form-control" formControlName="puesto" name="puesto" required="">
+                </div>
+                <div class="col-sm-12">
+                    <label class="control-label" for="puestoCompleto">EMPRESA: </label>
+                    <input type="text" class="form-control" formControlName="empresa" name="empresa" required="">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="form-group" style="margin-top: 5%;">
+            
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary" [disabled]="!perfileForm.valid">GUARDAR</button>
+                    <button type="button" class="btn btn-primary" (click)="volver()" style="margin-left: 5%;">VOLVER</button>
+                </div>
+            
+            </fieldset>
+        </form>
+    </div>
+</div>
